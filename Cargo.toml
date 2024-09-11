@@ -1,0 +1,23 @@
+[package]
+name = "qr-generator"
+version = "0.1.0"
+edition = "2021"
+authors = [ "fashni" ]
+
+[package.metadata.release]
+release = false
+
+# https://github.com/rustwasm/wasm-pack/issues/1247
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = { version="0.3.4" }
+worker-macros = { version="0.3.4" }
+console_error_panic_hook = { version = "0.1.1" }
+serde = "1.0.210"
+qrcode = "0.14.1"
+image = "0.25.2"
